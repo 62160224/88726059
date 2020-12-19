@@ -1,0 +1,34 @@
+<title>CSS</title>
+<link rel="stylesheet" type="text/css" href="css/mystyle.css">
+<script>
+    rn = Math.floor(Math.random() * 100);
+
+    function guess(n){
+        document.getElementById('Number').innerHTML += n+" ";}
+
+    function conclude(n){
+        if(n<rn)
+            document.getElementById('conclude').innerHTML ="น้อยไปใส่ใหม่!";
+        else if(n>rn)
+            document.getElementById('conclude').innerHTML ="มากไปใส่ใหม่!";
+        else
+            document.getElementById('conclude').innerHTML ="! ถูกต้องแล้วเลขนี้ที่เราต้องการ!";}
+
+    function Sover(){
+        //window.location.reload();
+        rn = Math.floor(Math.random() * 100);
+        document.getElementById('Number').innerHTML =" ";
+        document.getElementById('conclude').innerHTML =" ";
+        }
+
+</script>
+
+<button onclick="guess(gn.value); conclude(gn.value)">Guess</button></br>
+
+<input type="text" placeholder="?" id="gn"></br>
+
+<p id="Number"></p><br>
+<p id="conclude"></p>
+
+
+<button onclick="Sover()">Start Over</button></br>

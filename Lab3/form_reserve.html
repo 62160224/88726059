@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>CSS</title>
+ <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+
+ <title>Hotel Booking</title>
+</head>
+<body>
+ <h3>Hotel Booking</h3>
+ <form method="POST" action="https://angsila.cs.buu.ac.th/~wittawas/632/88726059/lab02/afile.php">
+    
+<table><tr><td><label for="roomtype">Room Type</label></td>
+    <td colspan="2"><select name="roomtype">
+    <option value="0">Please Select</option>
+    <option value="1">Standard</option>
+    <option value="2">Luxury</option>
+    <option value="3">Deluxe</option></td></tr>
+    
+<tr><td><label for="roomtype">Room Type</label></td>
+    <td colspan="2"><select name="roomtype">
+    <option value="0">Please Select     
+    <option value="1-2">1-2</option>
+    <option value="3-4">3-4</option>
+    <option value="5-6">5-6</option>
+    <option value="7-8">7-8</option></td></tr>     
+
+<tr><td><label for="fname" for="lname">Name</label></td>
+    <td><input type="text" placeholder = "First" name="fname" id="fname">
+    <input type="text" placeholder = "Last" name="lname" id="lname"></td></tr>
+        
+
+<tr><td colspan="1"><label for="email">Email</label></td>
+    <td><input type="text" size = "46" placeholder = "john@company.com" name="email" id="email"></td></tr>
+        
+
+ <tr><td><label for="">Arrival:</label></td>
+ <td><input type="date" name="arrivaldate" id="arrivaldate">
+ <input type="time" name="arrivaltime" id="arrivaltime"></td>
+ </tr>
+
+<tr><td><label for="">Departure:</label></td>
+<td><input type="date" name="departuredate" id="departuredate"><input type="time" name="departuredate" id="departuretime"></td>
+</tr>
+ 
+<tr><td><label for="">Free Pickup:</label></td>
+<td><input type="radio" name="pickup" id="pickup" value="Yes">Yes, Sure! <br>
+<input type="radio" name="pickup" id="pickup" value="No">No, I already rented a cal</td></tr>
+
+<tr><td colspan="1"><label for="flightnum">Flight Number</label></td>
+    <td><input type="text" size = "46" placeholder = "C1209" name="flightnum" id="flightnum"></td></tr>
+    
+ <tr><td>Other requests:</td>
+ <td><Textarea name="otherreq" id="comment" rows="5" cols="50"></Textarea></td>
+ </tr>
+
+ <td></td>
+ <tr>
+    <tr><td></td><td><input type="submit" value="Complete Reservation"></td></tr>
+ </form>
+
+</table>
+<a href="main.html"><p style="font-size:30px">Back to main</a></p><hr/>
+
+</body>
+</html>
