@@ -1,0 +1,11 @@
+<h1>1. โปรแกรม ทักทาย - hello.html</h1>
+<script>
+    function people(name){
+        div = document.getElementById('dog');
+        div.innerHTML = "";
+        div.innerHTML += "Hello "+name+" ";
+    }
+</script>
+
+<input type="text" onkeyup = "people(this.value);"><br><br>
+<div id="dog"></div>

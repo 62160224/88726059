@@ -1,0 +1,21 @@
+<h2>2. โปรแกรม สูตรคูณ - multi.html</h2>
+<script language="JavaScript">
+
+    function show(numbers){
+    numbers = document.getElementById("numbers").value;
+    div = document.getElementById("Show");
+    div.innerHTML = "";
+    table = ``
+    for(i = 1; i<=12; i++){
+    table += `<tr> 
+                <td>${numbers} x ${i} = </td>
+                <td>${numbers*i}</td>
+             </tr>`
+  }
+  div.innerHTML = table
+ }
+ </script>
+<input type="text" name="numbers" id="numbers"  placeholder="สูตรคูณแม่ x">
+<input type="button" value="แสดงสูตรคูณ" onclick="show()"> <br> <br>
+<table border="1">
+<tbody id="Show" ></tbody>
