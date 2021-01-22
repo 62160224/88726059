@@ -1,0 +1,29 @@
+
+body{
+    text-align: center;
+    background-image:url("123.jpg");
+}
+body {
+    font-size: 24px;
+    font-family: 'Playfair Display', serif;
+}
+
+body {
+    font-size: 12px;
+    font-family: Tahoma;
+    text-align: center;
+
+}
+
+table {
+    font-family: Tahoma;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 12px;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
