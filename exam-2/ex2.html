@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+    function show(){
+        var authors = [
+            { authorID: 1111, author: 'wittawas', penname: 'witty100' },
+            { authorID: 1112, author: 'jakkarin', penname: 'พ่อบ้านใจกล้า' },
+            { authorID: 1113, author: 'worawit', penname: 'obob' }];
+            //เก็บข้อมูล อาเรย์
+            //ในอาเรย์แต่ละช่อง มีวัตถุอีก3อัน
+            
+            for(i=0; i<=3; i++){    //ลูปตามจำนวนข้อมูลที่สร้าง คืออาเรย์ 3 ตัว
+                document.getElementById("disp").innerHTML += "รหัส: "+authors[i].authorID+"<br>";    //ส่งข้อความไปที่หน้าเพจ
+                document.getElementById("disp").innerHTML += "ชื่อ: "+authors[i].author+"<br>";       //authors[i] คือ ดึงข้อมูลจาก authors 
+                document.getElementById("disp").innerHTML += "นามปากกา: "+authors[i].penname+"<br>";    //[i] จะเริ่มตั้งแต่ 0 คือ คนที่1 - คนที่3
+                document.getElementById("disp").innerHTML += "______________________"+"<br>";       //.authorID,.author,.penname คือข้อมูลของแต่ละคน รหัส,ชื่อ,นามปากกา
+            }
+    }
+</script>
+
+<body onpageshow="show()">  <!-- เรียกใช้ฟังก์ชัน show เมื่อเปิดหน้าเพจ onpageshow-->
+    <b>ผู้แต่ง</b><br>
+    <a>______________________</a>
+    <div id="disp"></div>   <!--แท็ก ใช้แสดงผล-->
+</body>
+</html>

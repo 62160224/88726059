@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    authors = [];
+    count = 0;
+
+    function add(aID, a, pen){
+        aID = document.getElementById('authorID').value     //ตัวแปรแต่ละตัว อ้างถึงค่าที่รับมา รหัส, ชื่อ, นามปากกา
+        author = document.getElementById('author').value
+        pen = document.getElementById('penname').value
+
+        authors.push({aID, author, pen});       //เอาข้อมูลที่รับมา สร้างเป็นวัตถุแล้วใส่ไว้ในอาเรย์ authors โดยใช้ฟังก์ชั่น push
+
+        str = JSON.stringify(authors);          //แปลงอาเรย์ authors เป็นข้อความ
+
+        localStorage.setItem("authors", str);   //นำข้อความที่แปลงแล้วไปเก็บใน localStorage และตั้งชื่อ "authors"
+        
+        document.getElementById("disp").innerHTML = " ";    //ให้แต่ละครั้งเป็นตัวว่าง เพื่อที่จะแสดงค่าใหม่ที่วนตั้งแต่ตัวแรกตลอด
+
+        for(i=0; i<=count; i++){    //ลูปตั้งแต่ 0 จนถึง count
+            document.getElementById("disp").innerHTML += "รหัส: "+authors[i].aID+"<br>";
+            document.getElementById("disp").innerHTML += "ชื่อ: "+authors[i].author+"<br>";
+            document.getElementById("disp").innerHTML += "นามปากกา: "+authors[i].pen+"<br>";
+            document.getElementById("disp").innerHTML += "______________________"+"<br>";
+        }
+        count=count+1;
+    }
+
+    function show(){    //ฟังก์ชั่นแสดงข้อมูลเมื่อ refresh หน้าเพจ
+        str = localStorage.getItem("authors");  //เรียกใช้ localStorage
+        str = JSON.parse(str);                  //แปลงข้อความที่อยู่ใน localStorage เป็นอาเรย์
+
+        for(i=0; i<=str.length; i++){   //str.length จะเท่ากับจำนวนอาเรย์
+            document.getElementById("disp").innerHTML += "รหัส: "+str[i].aID+"<br>";
+            document.getElementById("disp").innerHTML += "ชื่อ: "+str[i].author+"<br>";
+            document.getElementById("disp").innerHTML += "นามปากกา: "+str[i].pen+"<br>";
+            document.getElementById("disp").innerHTML += "______________________"+"<br>";
+    }
+}
+</script>
+<body onpageshow="show()">  <!-- เรียกใช้ฟังก์ชัน show เมื่อเปิดหน้าเพจ ข้อ b -->
+    <form>
+    <b>ผู้แต่ง</b><br>
+    <a>______________________</a><br>
+    <a>รหัสผู้แต่ง</a><br>
+    <input type="text" id="authorID"></br>  <!-- textbox รับค่า ระบุ id ของแต่ละค่า เพื่อนำค่าไปเก็บ-->
+    <a>ชื่อผู้แต่ง</a><br>
+    <input type="text" id="author"></br>
+    <a>นามปากกา</a><br>
+    <input type="text" id="penname"></br>
+    
+    <button onclick="add(this.value, this.value, this.value);" id="authorID"    
+    id="author" id="penname" type="reset" value="reset">Save</button><br>   <!-- ปุ่ม เมื่อกรอกข้อมูลแล้วจะส่งค่าไปที่ฟังก์ชั่น add -->
+    
+    <!-- onclick จะส่งค่าเมื่อกดปุ่ม  this.value อ้างถึงข้อมูลที่กรอกใน textbox และระบุ id ของแต่ละค่าที่ใส่-->
+    <!-- type="reset" value="reset" ล้างข้อความใน textbox ทุกอัน โดยต้องอยู่ในแท็ก <form> -->
+
+    <a>______________________</a><br>
+    <div id="disp"></div>   <!-- แสดงผลลัพธ์ในหน้าเพจ -->
+    
+    </form>
+</body>
+</html>
